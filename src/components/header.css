@@ -1,0 +1,58 @@
+
+.features {
+  float:left;
+  font-size:20px;
+  color: grey;
+  display:flex;
+  
+}
+
+.Shortly {
+  font-size:22px;
+  font-weight:500;
+  float:left;
+  margin-right:80px;
+  margin-left:80px
+}
+
+.navbar {
+  display:inline;
+  
+}
+
+.registration {
+  float:right;
+  
+}
+
+.feature {
+  float:left;
+  margin-right:80px;
+}
+
+.pricing {
+  float:right;
+  margin-right:80px;
+
+}
+
+.login {
+  float: left;
+  margin-right:80px;
+  color:grey;
+  font-size:20px;
+}
+
+.signup {
+  float: left;
+  margin-right:80px;
+  margin-top:20px;
+  font-size:20px;
+  background-color:hsl(180, 66%, 49%);
+  border-radius:18px;
+  color:whitesmoke;
+  border-color:white;
+  width:95px;
+  height:35px;
+  
+}
