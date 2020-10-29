@@ -89,7 +89,7 @@ const UseStyles = makeStyles({
 
   textpart: {
     marginTop: "300px",
-    marginLeft: "395px",
+    marginLeft: "200px",
   },
 
   card1: {
@@ -117,6 +117,8 @@ const UseStyles = makeStyles({
     width: "290px",
     padding: "23px",
     height: "230px",
+    marginTop: "40px",
+
   },
 
   box2: {
@@ -138,6 +140,7 @@ const UseStyles = makeStyles({
     width: "290px",
     padding: "23px",
     height: "230px",
+    marginTop: "80px",
   },
 
   box3: {
@@ -155,10 +158,11 @@ const UseStyles = makeStyles({
     marginBottom: "20px",
   },
   card: {
-    marginTop: "50px",
+
+    padding: "3% 13% 2% 13%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
 
   }
 

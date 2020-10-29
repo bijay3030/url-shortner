@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import image from '../images/bg-boost-desktop.svg';
@@ -9,7 +9,7 @@ import twittericon from '../images/icon-twitter.svg';
 import pinteresticon from '../images/icon-pinterest.svg';
 import instaicon from '../images/icon-instagram.svg';
 
-const UseStyles = makeStyles({
+const UseStyles = makeStyles(theme => createStyles({
   box: {
     backgroundColor: "hsl(257, 27%, 26%)",
     height: "200px",
@@ -27,10 +27,11 @@ const UseStyles = makeStyles({
     fontSize: "20px",
     fontWeight: "800",
     zIndex: "1",
-    marginTop: "-140px",
-    marginLeft: "800px",
+    marginTop: "-150px",
+    marginLeft: "500px",
     color: "white",
     marginBottom: "20px",
+    [theme.breakpoints.between('xs', 'sm')]: {}
   },
 
   button: {
@@ -42,7 +43,7 @@ const UseStyles = makeStyles({
     width: "150px",
     borderColor: "white",
     color: "whitesmoke",
-    marginLeft: "830px",
+    marginLeft: "530px",
     marginTop: "-1px"
   },
   footer: {
@@ -61,7 +62,7 @@ const UseStyles = makeStyles({
   },
 
 
-});
+}))
 
 
 const footer = () => {
