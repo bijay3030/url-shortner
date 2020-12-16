@@ -6,20 +6,20 @@ import Mainimg from '../images/illustration-working.svg';
 
 const midsection = () => {
   return (
-    <div class="midsection">
-      <div class="textpart">
-        <p class="header">
+    <div className="midsection">
+      <div className="textpart">
+        <p className="header">
           More than just Shorter links
         </p>
-        <p class="plaintext">
+        <p className="plaintext">
           Builds your brand recognition and get detailed insights on how your links are performing.
         </p>
-        <button class="button">
+        <button className="button">
           get started
         </button>
       </div>
-      <div class="image">
-        <img src={Mainimg} style={{ height: "300px " }} />
+      <div className="image">
+        <img src={Mainimg} style={{ height: "300px " }} alt="mainimg" />
 
       </div>
 

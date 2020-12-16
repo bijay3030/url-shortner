@@ -5,13 +5,16 @@ import Searchpart from './components/searchpart';
 import Footer from './components/footer';
 import './App.css';
 
+
 function App() {
   return (
-    <div class="mainpage">
+    <div className="mainpage">
       <Header />
       <Midsection />
       <Searchpart />
       <Footer />
+
+
     </div>
   );
 }

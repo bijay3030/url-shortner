@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -9,6 +9,7 @@ import Brandedrecognition from '../images/icon-brand-recognition.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import Detailrecord from '../images/icon-detailed-records.svg';
 import Fullycustomize from '../images/icon-fully-customizable.svg';
+import axios from 'axios';
 
 const UseStyles = makeStyles({
   bigbox: {
@@ -164,23 +165,63 @@ const UseStyles = makeStyles({
     flexDirection: "row",
     justifyContent: "space-between",
 
-  }
+  },
+  shortlink: {
+    marginTop: "5%",
+    marginLeft: "14%",
+    backgroundColor: "white",
+    padding: "1%",
+    width: "975px",
+    height: "30px",
+    borderRadius: "8px ",
 
+  }
 
 });
 
 
-const searchpart = () => {
+const Searchpart = () => {
+  const [url, setUrl] = useState('');
+  const [data, setData] = useState({});
+  const [show, setShow] = useState(true);
+
+  const Urlshorten = () => {
+    axios.get(`https://api.shrtco.de/v2/shorten?url=${url}`)
+      .then(res => {
+        console.log(res)
+        setData(res.data.result)
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+  }
+
   const classes = UseStyles();
   return (
     <div className={classes.searchpart}>
       <div className={classes.inputfield}>
-        <Box border={1} className={classes.bigbox}>
-          <img src={Image} className={classes.img} />
-          <TextField size="small" className={classes.textfield} variant="filled" />
-          <Button className={classes.buttons} variant="contained"> shorten it! </Button >
-        </Box>
+        <div border={1} className={classes.bigbox}>
+          <img src={Image} className={classes.img} alt="imaged" />
+          <TextField value={url} onChange={(e) => setUrl(e.target.value)} size="small" className={classes.textfield} variant="filled" />
+          <Button onClick={Urlshorten} className={classes.buttons} variant="contained"> shorten it! </Button >
+        </div>
       </div>
+
+      {data !== null &&
+        <div className={classes.shortlink}>
+          <div style={{ marginLeft: "40px" }}>
+            {data?.original_link}
+          </div>
+          <div style={{ marginLeft: "120px", float: "left" }}>
+            {data?.full_short_link}
+            <Button>
+              copy
+            </Button>
+          </div>
+
+        </div>
+      }
 
       <div className={classes.textpart}>
         <Typography className={classes.advancedstatistic}>Advanced Statistics</Typography>
@@ -192,7 +233,7 @@ const searchpart = () => {
           <Card className={classes.card1}>
             <div style={{ position: "absolute", zIndex: "1", marginTop: "-40px" }}>
               <Box border={1} className={classes.box}>
-                <img src={Brandedrecognition} />
+                <img src={Brandedrecognition} alt="imgbrand" />
               </Box>
             </div>
             <Typography component="h2" className={classes.brand}>
@@ -208,7 +249,7 @@ const searchpart = () => {
           <Card className={classes.card2}>
             <div style={{ position: "absolute", zIndex: "1", marginTop: "-40px" }}>
               <Box border={1} className={classes.box2}>
-                <img src={Detailrecord} />
+                <img src={Detailrecord} alt="detailedrecord" />
               </Box>
             </div>
             <Typography component="h2" className={classes.detailrecords}>
@@ -224,7 +265,7 @@ const searchpart = () => {
           <Card className={classes.card3}>
             <div style={{ position: "absolute", zIndex: "1", marginTop: "-40px" }}>
               <Box border={1} className={classes.box3}>
-                <img src={Fullycustomize} />
+                <img src={Fullycustomize} alt="fully" />
               </Box>
             </div>
             <Typography component="h2" className={classes.fullycustomize}>
@@ -241,4 +282,4 @@ const searchpart = () => {
   )
 }
 
-export default searchpart;
+export default Searchpart;

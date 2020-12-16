@@ -4,22 +4,22 @@ import './header.css';
 
 const header = () => {
   return (
-    <div class="navbar">
+    <div className="navbar">
 
       <div>
-        <div class="shortly">
-          <p class="Shortly">Shortly</p>
+        <div className="shortly">
+          <p className="Shortly">Shortly</p>
         </div>
 
-        <div class="features">
-          <p class="feature">Features</p>
-          <p class="pricing"> Pricing</p>
+        <div className="features">
+          <p className="feature">Features</p>
+          <p className="pricing"> Pricing</p>
           <p>Resources</p>
         </div>
       </div>
-      <div class="registration">
-        <p class="login"> Login</p>
-        <button class="signup"> Signup</button>
+      <div className="registration">
+        <p className="login"> Login</p>
+        <button className="signup"> Signup</button>
       </div>
     </div >
   )

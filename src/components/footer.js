@@ -71,7 +71,7 @@ const footer = () => {
     <div className={classes.footer}>
       <div>
         <Box className={classes.box}>
-          <img src={image} className={classes.image} />
+          <img src={image} className={classes.image} alt="box" />
           <Typography className={classes.text}>
             Boost your links today
           </Typography>
@@ -133,10 +133,10 @@ const footer = () => {
           </Typography>
         </div>
         <div >
-          <img src={fbicon} style={{ marginRight: "20px" }} />
-          <img src={twittericon} style={{ marginRight: "20px" }} />
-          <img src={pinteresticon} style={{ marginRight: "20px" }} />
-          <img src={instaicon} style={{ marginRight: "20px" }} />
+          <img src={fbicon} style={{ marginRight: "20px" }} alt="1" />
+          <img src={twittericon} style={{ marginRight: "20px" }} alt="2" />
+          <img src={pinteresticon} style={{ marginRight: "20px" }} alt="3" />
+          <img src={instaicon} style={{ marginRight: "20px" }} alt="4" />
         </div>
 
       </div>
