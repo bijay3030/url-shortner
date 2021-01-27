@@ -13,8 +13,6 @@ function App() {
       <Midsection />
       <Searchpart />
       <Footer />
-
-
     </div>
   );
 }

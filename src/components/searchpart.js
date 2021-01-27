@@ -10,14 +10,23 @@ import { makeStyles } from '@material-ui/core/styles';
 import Detailrecord from '../images/icon-detailed-records.svg';
 import Fullycustomize from '../images/icon-fully-customizable.svg';
 import axios from 'axios';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const UseStyles = makeStyles({
+  searchpart: {
+    marginTop: "5%",
+    backgroundColor: "#CFCBCA",
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+
+  },
   bigbox: {
     height: "100px",
-    width: "1000px",
+    width: "1200px",
     backgroundColor: " hsl(257, 27%, 26%)",
     borderRadius: "15px",
-    position: "absolute",
     zIndex: "0",
   },
 
@@ -30,7 +39,7 @@ const UseStyles = makeStyles({
   },
 
   textfield: {
-    width: "600px",
+    width: "900px",
     position: "absolute",
     zIndex: "1",
     backgroundColor: "white",
@@ -41,7 +50,7 @@ const UseStyles = makeStyles({
   buttons: {
     position: "absolute",
     zIndex: "1",
-    marginLeft: "700px",
+    marginLeft: "1000px",
     marginTop: "27px",
     bordeRadius: "15px",
     fontSize: "18px",
@@ -52,12 +61,6 @@ const UseStyles = makeStyles({
     borderColor: "white",
     color: "whitesmoke",
   },
-  searchpart: {
-    marginTop: "60px",
-    backgroundColor: "#CFCBCA",
-    width: "100%",
-    height: "800px",
-  },
 
   inputfield: {
     position: "absolute",
@@ -66,31 +69,24 @@ const UseStyles = makeStyles({
     marginTop: "-50px",
   },
 
-  lowerpart: {
-    display: "flex",
-    height: "300px",
-    marginTop: "300px",
-    flexDirection: "column",
-    width: "100px",
-    backgroundColor: "red",
-  },
-
   advancedstatistic: {
     fontSize: "22px",
     fontWeight: "800",
-    marginLeft: "400px",
     width: "300px",
   },
 
   text: {
     color: "gray",
-    marginLeft: "300px",
     width: "430px",
   },
 
   textpart: {
-    marginTop: "300px",
-    marginLeft: "200px",
+    display: "flex",
+    justifyContent: "space-around",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "9%"
+
   },
 
   card1: {
@@ -159,21 +155,51 @@ const UseStyles = makeStyles({
     marginBottom: "20px",
   },
   card: {
-
     padding: "3% 13% 2% 13%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
 
   },
+
+  upperpart: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+    gap: "25px",
+    alignItems: "center"
+  },
   shortlink: {
-    marginTop: "5%",
-    marginLeft: "14%",
-    backgroundColor: "white",
-    padding: "1%",
-    width: "975px",
-    height: "30px",
-    borderRadius: "8px ",
+    background: "white",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: "74px",
+    width: "65%",
+    gap: "25px",
+    zIndex: "2",
+    marginTop: "4%",
+    marginLeft: "11%",
+    borderRadius: "13px",
+
+
+  },
+  original_link: {
+    alignSelf: "center",
+    justifySelf: "center",
+    padding: "2%",
+
+  },
+  copyButton: {
+    bordeRadius: "15px",
+    fontSize: "16px",
+    backgroundColor: "hsl(180, 66%, 49%)",
+    borderRadius: "18px",
+    height: "40px",
+    width: "120px",
+    borderColor: "white",
+    color: "whitesmoke",
+
 
   }
 
@@ -184,8 +210,16 @@ const Searchpart = () => {
   const [url, setUrl] = useState('');
   const [data, setData] = useState({});
   const [show, setShow] = useState(true);
+  const [copy, setCopy] = useState(false);
+
 
   const Urlshorten = () => {
+    if (!show) {
+      setShow(true);
+    }
+    else {
+      setShow(false);
+    }
     axios.get(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then(res => {
         console.log(res)
@@ -200,33 +234,42 @@ const Searchpart = () => {
   const classes = UseStyles();
   return (
     <div className={classes.searchpart}>
-      <div className={classes.inputfield}>
-        <div border={1} className={classes.bigbox}>
-          <img src={Image} className={classes.img} alt="imaged" />
-          <TextField value={url} onChange={(e) => setUrl(e.target.value)} size="small" className={classes.textfield} variant="filled" />
-          <Button onClick={Urlshorten} className={classes.buttons} variant="contained"> shorten it! </Button >
+      <div className={classes.upperpart}>
+        <div className={classes.inputfield}>
+          <div border={1} className={classes.bigbox}>
+            <img src={Image} className={classes.img} alt="imaged" />
+            <TextField value={url} onChange={(e) => setUrl(e.target.value)} size="small" className={classes.textfield} variant="filled" />
+            <Button onClick={() => Urlshorten(show)} className={classes.buttons} variant="contained"> shorten it! </Button >
+          </div>
         </div>
+        {data !== null && show === false &&
+          <div className={classes.shortlink}>
+            <div className={classes.original_link}>
+              {data?.original_link}
+            </div>
+            <div style={{ color: "hsl(180, 66%, 49%)" }}>
+              {data?.full_short_link}
+            </div>
+            <div>
+              <CopyToClipboard text={data?.full_short_link} onCopy={() => setCopy(true)}>
+                {copy ? <Button style={{ backgroundColor: "purple" }} >Copied</Button> : <Button className={classes.copyButton}>
+                  copy
+                  </Button>}
+              </CopyToClipboard>
+            </div>
+          </div>
+
+        }
+
+
+
+        <div className={classes.textpart}>
+          <Typography className={classes.advancedstatistic}>Advanced Statistics</Typography>
+          <Typography className={classes.text}> Tracks how your links are performing across the web with our advanced statistics dashboard</Typography>
+        </div>
+
       </div>
 
-      {data !== null &&
-        <div className={classes.shortlink}>
-          <div style={{ marginLeft: "40px" }}>
-            {data?.original_link}
-          </div>
-          <div style={{ marginLeft: "120px", float: "left" }}>
-            {data?.full_short_link}
-            <Button>
-              copy
-            </Button>
-          </div>
-
-        </div>
-      }
-
-      <div className={classes.textpart}>
-        <Typography className={classes.advancedstatistic}>Advanced Statistics</Typography>
-        <Typography className={classes.text}> Tracks how your links are performing across the web with our advanced statistics dashboard</Typography>
-      </div>
 
       <div className={classes.card}>
         <div style={{ position: "relative", zIndex: "0" }}>
@@ -238,10 +281,10 @@ const Searchpart = () => {
             </div>
             <Typography component="h2" className={classes.brand}>
               Brand Recognition
-              </Typography>
+                </Typography>
             <Typography style={{ color: "grey" }}>
               Boast your brand recognition with each click.Generic links don't mean a thing.Branded links helps install confidence in your content
-              </Typography>
+                </Typography>
           </Card>
         </div>
 
@@ -254,10 +297,10 @@ const Searchpart = () => {
             </div>
             <Typography component="h2" className={classes.detailrecords}>
               Detailed Records
-              </Typography>
+                </Typography>
             <Typography style={{ color: "grey" }}>
-              Gain insights into who is clicking your links.Knowing whwn and where people engage with your content helps inform better desisions.
-              </Typography>
+              Gain insights into who is clicking your links.Knowing when and where people engage with your content helps inform better desisions.
+                </Typography>
           </Card>
         </div>
 
@@ -270,14 +313,17 @@ const Searchpart = () => {
             </div>
             <Typography component="h2" className={classes.fullycustomize}>
               Fully Customizable
-            </Typography>
+              </Typography>
             <Typography style={{ color: "grey" }}>
               Improve brand awarness and content discoverability through customizable links supercharging audience engagement.
-            </Typography>
+              </Typography>
           </Card>
         </div>
 
       </div>
+
+
+
     </div >
   )
 }

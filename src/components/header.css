@@ -1,58 +1,50 @@
-
-.features {
-  float:left;
-  font-size:20px;
-  color: grey;
-  display:flex;
-  
-}
-
 .Shortly {
   font-size:22px;
-  font-weight:500;
-  float:left;
-  margin-right:80px;
-  margin-left:80px
+  font-weight:500; 
+}
+
+.feature{
+  color:grey;
+  font-size: 16px;
 }
 
 .navbar {
-  display:inline;
-  
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap;  
+}
+
+.navleft{
+  display:flex;
+  justify-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width:52%;
+  align-items: center;
 }
 
 .registration {
-  float:right;
-  
-}
-
-.feature {
-  float:left;
-  margin-right:80px;
-}
-
-.pricing {
-  float:right;
-  margin-right:80px;
-
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  width: 12%;
+  flex-grow: 0.2;
 }
 
 .login {
-  float: left;
-  margin-right:80px;
   color:grey;
   font-size:20px;
 }
 
-.signup {
-  float: left;
-  margin-right:80px;
-  margin-top:20px;
+.signup { 
   font-size:20px;
   background-color:hsl(180, 66%, 49%);
   border-radius:18px;
   color:whitesmoke;
   border-color:white;
   width:95px;
-  height:35px;
-  
+  height:35px; 
 }

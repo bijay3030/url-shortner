@@ -6,20 +6,20 @@ const header = () => {
   return (
     <div className="navbar">
 
-      <div>
-        <div className="shortly">
-          <p className="Shortly">Shortly</p>
-        </div>
-
-        <div className="features">
-          <p className="feature">Features</p>
-          <p className="pricing"> Pricing</p>
-          <p>Resources</p>
-        </div>
+      <div className="navleft">
+        <p className="Shortly">Shortly</p>
+        <p className="feature">Features</p>
+        <p className="feature"> Pricing</p>
+        <p className="feature">Resources</p>
       </div>
+
       <div className="registration">
-        <p className="login"> Login</p>
-        <button className="signup"> Signup</button>
+        <div>
+          <p className="login"> Login</p>
+        </div>
+        <div>
+          <button className="signup"> Signup</button>
+        </div>
       </div>
     </div >
   )

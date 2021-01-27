@@ -15,27 +15,27 @@ const UseStyles = makeStyles(theme => createStyles({
     height: "200px",
     width: "100%",
     position: "absolute",
-    zIndex: "-1",
+    zIndex: "1"
   },
 
   image: {
     height: "200px",
     width: "100%",
+    position: "absolute",
+
   },
 
   text: {
     fontSize: "20px",
     fontWeight: "800",
-    zIndex: "1",
-    marginTop: "-150px",
-    marginLeft: "500px",
     color: "white",
-    marginBottom: "20px",
-    [theme.breakpoints.between('xs', 'sm')]: {}
+    position: "relative",
+    zIndex: "3",
+    alignSelf: "center",
+
   },
 
   button: {
-    bordeRadius: "15px",
     fontSize: "16px",
     backgroundColor: "hsl(180, 66%, 49%)",
     borderRadius: "18px",
@@ -43,51 +43,67 @@ const UseStyles = makeStyles(theme => createStyles({
     width: "150px",
     borderColor: "white",
     color: "whitesmoke",
-    marginLeft: "530px",
-    marginTop: "-1px"
+    alignSelf: "center"
   },
   footer: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: "430px",
   },
   lowerpart: {
     backgroundColor: " hsl(255, 11%, 22%)",
-    width: "100%",
-    marginTop: "200px",
     display: "flex",
     flexDirection: "row",
-    padding: "3%",
+    padding: "4%",
     justifyContent: "space-between",
     color: "white",
   },
 
+  textpart: {
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    height: "100%",
+    zIndex: "3",
+
+    alignItems: "center",
+  },
+  icons: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    gap: "20px",
+    height: "fit-content"
+  }
 
 }))
-
 
 const footer = () => {
   const classes = UseStyles();
   return (
     <div className={classes.footer}>
-      <div>
+      <div className={classes.upperpart}>
         <Box className={classes.box}>
           <img src={image} className={classes.image} alt="box" />
-          <Typography className={classes.text}>
-            Boost your links today
-          </Typography>
-          <Button className={classes.button}>
-            Get Started
-         </Button>
+          <div className={classes.textpart}>
+            <Typography className={classes.text}>
+              Boost your links today
+            </Typography>
+            <Button className={classes.button}>
+              Get Started
+            </Button>
+          </div>
         </Box>
       </div>
+
       <div className={classes.lowerpart}>
-        <div>
+        <div >
           <Typography style={{ fontWeight: "700", fontSize: "22px" }}>
             Shortly
         </Typography>
         </div>
-
-        <div>
+        <div >
           <Typography style={{ fontWeight: "700", marginBottom: "15px" }}>
             Features
           </Typography>
@@ -132,11 +148,11 @@ const footer = () => {
             Contact
           </Typography>
         </div>
-        <div >
-          <img src={fbicon} style={{ marginRight: "20px" }} alt="1" />
-          <img src={twittericon} style={{ marginRight: "20px" }} alt="2" />
-          <img src={pinteresticon} style={{ marginRight: "20px" }} alt="3" />
-          <img src={instaicon} style={{ marginRight: "20px" }} alt="4" />
+        <div className={classes.icons} >
+          <img src={fbicon} alt="1" />
+          <img src={twittericon} alt="2" />
+          <img src={pinteresticon} alt="3" />
+          <img src={instaicon} alt="4" />
         </div>
 
       </div>

@@ -20,7 +20,6 @@ const midsection = () => {
       </div>
       <div className="image">
         <img src={Mainimg} style={{ height: "300px " }} alt="mainimg" />
-
       </div>
 
     </div>
