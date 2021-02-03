@@ -7,6 +7,7 @@
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+ 
 }
 
 .header {
@@ -42,4 +43,31 @@
   height:260px;
   
 }
+ @media (max-width:376px){
+   .midsection{
+     flex-direction: column-reverse;
+     width: 100%;
+   }
+   .textpart{
+     
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     margin: 0;
+     padding: 0;
+   } 
+   .plaintext{
+     font-size: 16px;
+     width:279px;
+   }
+   .header{
+     justify-self: center;
+   }
+   .image{
+     display: flex;
+     justify-content:center;
+     flex-wrap:nowrap;
 
+   }
+ } 

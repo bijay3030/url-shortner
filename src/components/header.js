@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.css';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 const header = () => {
@@ -19,6 +20,11 @@ const header = () => {
         </div>
         <div>
           <button className="signup"> Signup</button>
+        </div>
+        <div className="hamburgerMenu" >
+          <a href=" https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md" >
+            <MenuIcon />
+          </a>
         </div>
       </div>
     </div >

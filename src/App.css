@@ -10,4 +10,12 @@
   
 }
 
+@media (max-width:376px){
+  .mainpage{
+    margin:0%;
+    padding-right: 0%;
+    
+  }
+}
+
 

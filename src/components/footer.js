@@ -74,7 +74,11 @@ const UseStyles = makeStyles(theme => createStyles({
     flexDirection: "row",
     justifyContent: "space-around",
     gap: "20px",
-    height: "fit-content"
+    height: "fit-content",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: "column",
+
+    }
   }
 
 }))

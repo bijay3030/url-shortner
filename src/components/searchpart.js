@@ -12,7 +12,8 @@ import Fullycustomize from '../images/icon-fully-customizable.svg';
 import axios from 'axios';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-const UseStyles = makeStyles({
+const UseStyles = makeStyles((theme) => ({
+
   searchpart: {
     marginTop: "5%",
     backgroundColor: "#CFCBCA",
@@ -20,7 +21,10 @@ const UseStyles = makeStyles({
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "column",
-
+    [theme.breakpoints.down('sm')]: {
+      width: "300px",
+      marginTop: "3%",
+    }
   },
   bigbox: {
     height: "100px",
@@ -28,6 +32,11 @@ const UseStyles = makeStyles({
     backgroundColor: " hsl(257, 27%, 26%)",
     borderRadius: "15px",
     zIndex: "0",
+    [theme.breakpoints.down('sm')]: {
+      width: "380px",
+      height: "160px",
+      margin: "2%",
+    }
   },
 
   img: {
@@ -36,6 +45,10 @@ const UseStyles = makeStyles({
     position: "absolute",
     zIndex: "0",
     borderRadius: "20px",
+    [theme.breakpoints.down('sm')]: {
+      width: "20px",
+      height: "20px",
+    }
   },
 
   textfield: {
@@ -46,6 +59,10 @@ const UseStyles = makeStyles({
     borderRadius: "8px",
     marginLeft: "52px",
     marginTop: "23px",
+    [theme.breakpoints.down('sm')]: {
+      width: "300px",
+    }
+
   },
   buttons: {
     position: "absolute",
@@ -60,6 +77,12 @@ const UseStyles = makeStyles({
     width: "170px",
     borderColor: "white",
     color: "whitesmoke",
+    [theme.breakpoints.down('sm')]: {
+      margin: "0",
+      width: "300px",
+      marginTop: "100px",
+      marginLeft: "50px"
+    }
   },
 
   inputfield: {
@@ -67,6 +90,10 @@ const UseStyles = makeStyles({
     zIndex: "1",
     marginLeft: "200px",
     marginTop: "-50px",
+    [theme.breakpoints.down('sm')]: {
+      margin: "0",
+
+    }
   },
 
   advancedstatistic: {
@@ -85,8 +112,12 @@ const UseStyles = makeStyles({
     justifyContent: "space-around",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: "9%"
+    marginTop: "9%",
+    [theme.breakpoints.down('sm')]: {
+      margin: "0%",
+      justifyContent: "space-between"
 
+    }
   },
 
   card1: {
@@ -159,7 +190,11 @@ const UseStyles = makeStyles({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: "column",
+      justifyContent: "space-evenly",
 
+    }
   },
 
   upperpart: {
@@ -167,7 +202,10 @@ const UseStyles = makeStyles({
     justifyContent: "space-between",
     flexDirection: "column",
     gap: "25px",
-    alignItems: "center"
+    alignItems: "center",
+    [theme.breakpoints.down('sm')]: {
+
+    }
   },
   shortlink: {
     background: "white",
@@ -181,14 +219,11 @@ const UseStyles = makeStyles({
     marginTop: "4%",
     marginLeft: "11%",
     borderRadius: "13px",
-
-
   },
   original_link: {
     alignSelf: "center",
     justifySelf: "center",
     padding: "2%",
-
   },
   copyButton: {
     bordeRadius: "15px",
@@ -199,11 +234,8 @@ const UseStyles = makeStyles({
     width: "120px",
     borderColor: "white",
     color: "whitesmoke",
-
-
   }
-
-});
+}));
 
 
 const Searchpart = () => {

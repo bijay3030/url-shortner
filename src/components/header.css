@@ -48,3 +48,39 @@
   width:95px;
   height:35px; 
 }
+.hamburgerMenu{
+
+  position:absolute;
+  top:20px;
+  right: 20px;
+  opacity:0;
+  visibility: hidden;
+
+}
+
+
+@media  (max-width:376px){
+  .feature{
+    opacity: 0;
+    visibility:hidden;
+  }
+  .registration{
+    opacity: 0;
+    visibility:hidden;
+
+  }
+  .Shortly{
+    justify-self: center;
+  }
+  .hamburgerMenu{
+    opacity:0.5;
+    visibility: visible; 
+    width: 100%;
+  }
+
+  .navleft{
+    justify-content: center;
+    width: 100%;
+  }
+ 
+}
