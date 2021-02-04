@@ -22,8 +22,9 @@ const UseStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     flexDirection: "column",
     [theme.breakpoints.down('sm')]: {
-      width: "300px",
-      marginTop: "3%",
+      width: "355px",
+      margin: "0%"
+
     }
   },
   bigbox: {
@@ -31,9 +32,9 @@ const UseStyles = makeStyles((theme) => ({
     width: "1200px",
     backgroundColor: " hsl(257, 27%, 26%)",
     borderRadius: "15px",
-    zIndex: "0",
+
     [theme.breakpoints.down('sm')]: {
-      width: "380px",
+      width: "300px",
       height: "160px",
       margin: "2%",
     }
@@ -43,12 +44,13 @@ const UseStyles = makeStyles((theme) => ({
     height: "100px",
     width: "auto",
     position: "absolute",
-    zIndex: "0",
     borderRadius: "20px",
     [theme.breakpoints.down('sm')]: {
-      width: "20px",
-      height: "20px",
+      width: "300px",
+      height: "160px",
+
     }
+
   },
 
   textfield: {
@@ -60,12 +62,12 @@ const UseStyles = makeStyles((theme) => ({
     marginLeft: "52px",
     marginTop: "23px",
     [theme.breakpoints.down('sm')]: {
-      width: "300px",
+      width: "270px",
+
     }
 
   },
   buttons: {
-    position: "absolute",
     zIndex: "1",
     marginLeft: "1000px",
     marginTop: "27px",
@@ -79,20 +81,18 @@ const UseStyles = makeStyles((theme) => ({
     color: "whitesmoke",
     [theme.breakpoints.down('sm')]: {
       margin: "0",
-      width: "300px",
+      width: "250px",
       marginTop: "100px",
-      marginLeft: "50px"
+      marginLeft: "50px",
+
     }
   },
 
   inputfield: {
-    position: "absolute",
-    zIndex: "1",
     marginLeft: "200px",
     marginTop: "-50px",
     [theme.breakpoints.down('sm')]: {
       margin: "0",
-
     }
   },
 
@@ -105,6 +105,9 @@ const UseStyles = makeStyles((theme) => ({
   text: {
     color: "gray",
     width: "430px",
+    [theme.breakpoints.down('sm')]: {
+      width: "300px"
+    }
   },
 
   textpart: {
@@ -115,8 +118,9 @@ const UseStyles = makeStyles((theme) => ({
     marginTop: "9%",
     [theme.breakpoints.down('sm')]: {
       margin: "0%",
-      justifyContent: "space-between"
-
+      justifyContent: "space-between",
+      gap: "30px",
+      marginTop: "5%",
     }
   },
 
@@ -124,6 +128,9 @@ const UseStyles = makeStyles((theme) => ({
     width: "290px",
     padding: "23px",
     height: "230px",
+    [theme.breakpoints.down('sm')]: {
+      width: "250px"
+    }
   },
 
   box: {
@@ -137,8 +144,8 @@ const UseStyles = makeStyles((theme) => ({
   brand: {
     fontSize: "20px",
     fontWeight: "800px",
-    marginTop: "60px",
-    marginBottom: "20px",
+    marginTop: "20px",
+    marginBottom: "7px",
   },
 
   card2: {
@@ -146,6 +153,9 @@ const UseStyles = makeStyles((theme) => ({
     padding: "23px",
     height: "230px",
     marginTop: "40px",
+    [theme.breakpoints.down('sm')]: {
+      width: "250px"
+    }
 
   },
 
@@ -160,8 +170,8 @@ const UseStyles = makeStyles((theme) => ({
   detailrecords: {
     fontSize: "20px",
     fontWeight: "800px",
-    marginTop: "60px",
-    marginBottom: "20px",
+    marginTop: "20px",
+    marginBottom: "7px",
   },
 
   card3: {
@@ -169,6 +179,9 @@ const UseStyles = makeStyles((theme) => ({
     padding: "23px",
     height: "230px",
     marginTop: "80px",
+    [theme.breakpoints.down('sm')]: {
+      width: "250px"
+    }
   },
 
   box3: {
@@ -182,8 +195,8 @@ const UseStyles = makeStyles((theme) => ({
   fullycustomize: {
     fontSize: "20px",
     fontWeight: "1000px",
-    marginTop: "60px",
-    marginBottom: "20px",
+    marginTop: "20px",
+    marginBottom: "7px",
   },
   card: {
     padding: "3% 13% 2% 13%",
@@ -193,6 +206,9 @@ const UseStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: "column",
       justifyContent: "space-evenly",
+      margin: "0%",
+      width: "260px"
+
 
     }
   },
@@ -204,6 +220,8 @@ const UseStyles = makeStyles((theme) => ({
     gap: "25px",
     alignItems: "center",
     [theme.breakpoints.down('sm')]: {
+      justifyContent: "space-around",
+      width: "300px"
 
     }
   },
@@ -304,9 +322,9 @@ const Searchpart = () => {
 
 
       <div className={classes.card}>
-        <div style={{ position: "relative", zIndex: "0" }}>
+        <div >
           <Card className={classes.card1}>
-            <div style={{ position: "absolute", zIndex: "1", marginTop: "-40px" }}>
+            <div >
               <Box border={1} className={classes.box}>
                 <img src={Brandedrecognition} alt="imgbrand" />
               </Box>
@@ -320,9 +338,9 @@ const Searchpart = () => {
           </Card>
         </div>
 
-        <div style={{ position: "relative", zIndex: "0" }}>
+        <div >
           <Card className={classes.card2}>
-            <div style={{ position: "absolute", zIndex: "1", marginTop: "-40px" }}>
+            <div >
               <Box border={1} className={classes.box2}>
                 <img src={Detailrecord} alt="detailedrecord" />
               </Box>
@@ -336,9 +354,9 @@ const Searchpart = () => {
           </Card>
         </div>
 
-        <div style={{ position: "relative", zIndex: "0" }}>
+        <div >
           <Card className={classes.card3}>
-            <div style={{ position: "absolute", zIndex: "1", marginTop: "-40px" }}>
+            <div >
               <Box border={1} className={classes.box3}>
                 <img src={Fullycustomize} alt="fully" />
               </Box>
@@ -351,11 +369,7 @@ const Searchpart = () => {
               </Typography>
           </Card>
         </div>
-
       </div>
-
-
-
     </div >
   )
 }

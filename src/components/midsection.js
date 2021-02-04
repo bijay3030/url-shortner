@@ -23,13 +23,10 @@ const midsection = () => {
           <button className="button">
             get started
           </button>
-
         </div>
-
-
       </div>
       <div className="image">
-        <img src={Mainimg} style={{ height: "300px " }} alt="mainimg" />
+        <img src={Mainimg} className="mainimg" alt="mainimg" />
       </div>
 
     </div>

@@ -15,23 +15,25 @@ const UseStyles = makeStyles(theme => createStyles({
     height: "200px",
     width: "100%",
     position: "absolute",
-    zIndex: "1"
+    zIndex: "-2",
+
   },
 
   image: {
     height: "200px",
     width: "100%",
     position: "absolute",
-
+    zIndex: "-1",
+    [theme.breakpoints.down('sm')]: {
+      width: "375px"
+    }
   },
 
   text: {
     fontSize: "20px",
     fontWeight: "800",
     color: "white",
-    position: "relative",
-    zIndex: "3",
-    alignSelf: "center",
+    marginBottom: "25px",
 
   },
 
@@ -49,7 +51,11 @@ const UseStyles = makeStyles(theme => createStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    height: "430px",
+    [theme.breakpoints.down('sm')]: {
+      width: "300px"
+    }
+
+
   },
   lowerpart: {
     backgroundColor: " hsl(255, 11%, 22%)",
@@ -58,6 +64,24 @@ const UseStyles = makeStyles(theme => createStyles({
     padding: "4%",
     justifyContent: "space-between",
     color: "white",
+    height: "100px",
+    width: "100%",
+
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: "column",
+      height: "auto",
+      alignItems: "center",
+      width: "300px",
+    }
+  },
+
+  upperpart: {
+    height: "200px",
+    width: "100%",
+    [theme.breakpoints.down('sm')]: {
+      width: "280px",
+    }
+
   },
 
   textpart: {
@@ -65,9 +89,8 @@ const UseStyles = makeStyles(theme => createStyles({
     justifyContent: "center",
     flexDirection: "column",
     height: "100%",
-    zIndex: "3",
-
     alignItems: "center",
+
   },
   icons: {
     display: "flex",
@@ -76,8 +99,7 @@ const UseStyles = makeStyles(theme => createStyles({
     gap: "20px",
     height: "fit-content",
     [theme.breakpoints.down('sm')]: {
-      flexDirection: "column",
-
+      justifyContent: "center",
     }
   }
 
