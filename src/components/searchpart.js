@@ -22,8 +22,10 @@ const UseStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     flexDirection: "column",
     [theme.breakpoints.down('sm')]: {
-      width: "355px",
-      margin: "0%"
+      width: "114%",
+      margin: "0%",
+      justifyContent: "center",
+      alignItems: "center"
 
     }
   },
@@ -62,7 +64,7 @@ const UseStyles = makeStyles((theme) => ({
     marginLeft: "52px",
     marginTop: "23px",
     [theme.breakpoints.down('sm')]: {
-      width: "270px",
+      width: "auto",
 
     }
 
@@ -81,9 +83,10 @@ const UseStyles = makeStyles((theme) => ({
     color: "whitesmoke",
     [theme.breakpoints.down('sm')]: {
       margin: "0",
-      width: "250px",
+      width: "77%",
       marginTop: "100px",
       marginLeft: "50px",
+
 
     }
   },
@@ -118,9 +121,11 @@ const UseStyles = makeStyles((theme) => ({
     marginTop: "9%",
     [theme.breakpoints.down('sm')]: {
       margin: "0%",
-      justifyContent: "space-between",
+      justifyContent: "center",
+      alignItems: "center",
       gap: "30px",
       marginTop: "5%",
+      width: "100%"
     }
   },
 
@@ -205,9 +210,10 @@ const UseStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     [theme.breakpoints.down('sm')]: {
       flexDirection: "column",
-      justifyContent: "space-evenly",
+      justifyContent: "space-around",
       margin: "0%",
-      width: "260px"
+      width: "260px",
+      alignItems: "center"
 
 
     }
@@ -221,7 +227,7 @@ const UseStyles = makeStyles((theme) => ({
     alignItems: "center",
     [theme.breakpoints.down('sm')]: {
       justifyContent: "space-around",
-      width: "300px"
+      width: "399px"
 
     }
   },
@@ -237,6 +243,13 @@ const UseStyles = makeStyles((theme) => ({
     marginTop: "4%",
     marginLeft: "11%",
     borderRadius: "13px",
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: "center",
+      flexDirection: "column",
+      height: "147px",
+      width: "318px"
+
+    }
   },
   original_link: {
     alignSelf: "center",

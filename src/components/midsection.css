@@ -69,5 +69,8 @@
    .mainimg{
      width:100%;
    }
+   .button{
+     margin-bottom: 16px;
+   }
    
  } 

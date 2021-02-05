@@ -16,6 +16,9 @@ const UseStyles = makeStyles(theme => createStyles({
     width: "100%",
     position: "absolute",
     zIndex: "-2",
+    [theme.breakpoints.down('sm')]: {
+      width: "114%"
+    }
 
   },
 
@@ -25,7 +28,7 @@ const UseStyles = makeStyles(theme => createStyles({
     position: "absolute",
     zIndex: "-1",
     [theme.breakpoints.down('sm')]: {
-      width: "375px"
+      width: "100%"
     }
   },
 
@@ -52,7 +55,7 @@ const UseStyles = makeStyles(theme => createStyles({
     flexDirection: "column",
     justifyContent: "space-between",
     [theme.breakpoints.down('sm')]: {
-      width: "300px"
+      width: "375px"
     }
 
 
@@ -65,13 +68,15 @@ const UseStyles = makeStyles(theme => createStyles({
     justifyContent: "space-between",
     color: "white",
     height: "100px",
-    width: "100%",
+
 
     [theme.breakpoints.down('sm')]: {
       flexDirection: "column",
+
       height: "auto",
       alignItems: "center",
-      width: "300px",
+      width: "399px",
+
     }
   },
 
@@ -79,7 +84,14 @@ const UseStyles = makeStyles(theme => createStyles({
     height: "200px",
     width: "100%",
     [theme.breakpoints.down('sm')]: {
-      width: "280px",
+      width: "114%",
+    }
+
+  },
+  featuredbelow: {
+    [theme.breakpoints.down('sm')]: {
+      width: "78px",
+      marginBottom: "20px"
     }
 
   },
@@ -100,6 +112,7 @@ const UseStyles = makeStyles(theme => createStyles({
     height: "fit-content",
     [theme.breakpoints.down('sm')]: {
       justifyContent: "center",
+      marginTop: "7%"
     }
   }
 
@@ -124,12 +137,12 @@ const footer = () => {
       </div>
 
       <div className={classes.lowerpart}>
-        <div >
+        <div style={{ marginBottom: "25px" }} >
           <Typography style={{ fontWeight: "700", fontSize: "22px" }}>
             Shortly
         </Typography>
         </div>
-        <div >
+        <div className={classes.featuredbelow} >
           <Typography style={{ fontWeight: "700", marginBottom: "15px" }}>
             Features
           </Typography>
@@ -143,7 +156,7 @@ const footer = () => {
             Analytics
           </Typography>
         </div>
-        <div>
+        <div style={{ marginBottom: "25px" }}>
           <Typography style={{ fontWeight: "700", marginBottom: "15px" }}>
             Resources
           </Typography>
